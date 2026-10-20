@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080d1b">
   <title>Secure Password Generator</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <main class="container">
@@ -14,7 +14,6 @@
       <p>Create passwords randomly or using your own data.</p>
       <p class="muted">Simple · Fast · Private</p>
     </header>
-
     <section class="panels">
       <div class="panel">
         <h2>🎲 Random Password</h2>
@@ -32,10 +31,9 @@
         </div>
         <button id="randomBtn">Generate Random Password</button>
       </div>
-
       <div class="panel">
         <h2>👤 Password from Your Data</h2>
-        <p class="muted">Enter information to personalize your password.</p>
+        <p class="muted">Keeps your name recognizable and adds date details.</p>
         <label for="name">Name</label>
         <input id="name" type="text" placeholder="Your name" maxlength="80">
         <label for="dob">Date of birth</label>
@@ -47,23 +45,21 @@
         <button id="personalBtn" class="purple">Generate Password from Data</button>
       </div>
     </section>
-
     <section class="result panel">
       <h2>Your Password</h2>
       <div class="password-row">
-        <input id="password" type="password" placeholder="Your password will appear here"
-          readonly autocomplete="off" spellcheck="false">
+        <input id="password" type="password" placeholder="Your password will appear here" readonly autocomplete="off" spellcheck="false">
         <button id="showBtn" class="secondary" aria-label="Show password">Show</button>
         <button id="copyBtn" class="secondary">Copy</button>
         <button id="refreshBtn">↻ Refresh</button>
       </div>
       <div class="strength-track"><div id="strengthBar"></div></div>
-      <p id="strengthText" class="muted" aria-live="polite">Password strength: —</p>
+      <p id="strengthText" class="muted" aria-live="polite">Estimated strength: —</p>
       <p id="message" role="status" aria-live="polite"></p>
-      <p class="muted">Keep your passwords private. Avoid using personal details in real account passwords.</p>
+      <p class="muted">Personal-data passwords are easier to guess. Use random mode for important accounts.</p>
     </section>
-    <footer>Secure Password Generator · GitHub Pages</footer>
+    <footer>Password Generator · GitHub Pages</footer>
   </main>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
