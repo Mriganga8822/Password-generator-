@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <title>Secure Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🔐 Password Generator</h1>
+      <p>Create passwords randomly or using your own data.</p>
+      <p class="muted">Simple · Fast · Private</p>
+    </header>
+
+    <section class="panels">
+      <div class="panel">
+        <h2>🎲 Random Password</h2>
+        <p class="muted">Generate a strong, random password.</p>
+        <label for="length">Password length</label>
+        <div class="length-row">
+          <input id="length" type="number" min="8" max="64" value="16">
+          <input id="lengthSlider" type="range" min="8" max="64" value="16">
+        </div>
+        <div class="options">
+          <label><input type="checkbox" id="upper" checked> Uppercase</label>
+          <label><input type="checkbox" id="lower" checked> Lowercase</label>
+          <label><input type="checkbox" id="numbers" checked> Numbers</label>
+          <label><input type="checkbox" id="symbols" checked> Symbols</label>
+        </div>
+        <button id="randomBtn">Generate Random Password</button>
+      </div>
+
+      <div class="panel">
+        <h2>👤 Password from Your Data</h2>
+        <p class="muted">Enter information to personalize your password.</p>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" maxlength="80">
+        <label for="dob">Date of birth</label>
+        <input id="dob" type="text" placeholder="DD/MM/YYYY" maxlength="20">
+        <label for="nickname">Nickname</label>
+        <input id="nickname" type="text" placeholder="Your nickname" maxlength="80">
+        <label for="extra">Additional word (optional)</label>
+        <input id="extra" type="text" placeholder="Favourite word" maxlength="80">
+        <button id="personalBtn" class="purple">Generate Password from Data</button>
+      </div>
+    </section>
+
+    <section class="result panel">
+      <h2>Your Password</h2>
+      <div class="password-row">
+        <input id="password" type="password" placeholder="Your password will appear here"
+          readonly autocomplete="off" spellcheck="false">
+        <button id="showBtn" class="secondary" aria-label="Show password">Show</button>
+        <button id="copyBtn" class="secondary">Copy</button>
+        <button id="refreshBtn">↻ Refresh</button>
+      </div>
+      <div class="strength-track"><div id="strengthBar"></div></div>
+      <p id="strengthText" class="muted" aria-live="polite">Password strength: —</p>
+      <p id="message" role="status" aria-live="polite"></p>
+      <p class="muted">Keep your passwords private. Avoid using personal details in real account passwords.</p>
+    </section>
+    <footer>Secure Password Generator · GitHub Pages</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
